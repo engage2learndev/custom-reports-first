@@ -1,0 +1,150 @@
+<div class="container mt-4">
+
+
+
+  <div class="row mt-3">
+    <div class="col-12">
+      <h2>Select Dataset(s)</h2>
+      <tree-view [treeList]="treeData" [isRoot]="true" [rootTableLabel]="" [isShowing]="true"></tree-view>
+      <div style="clear: both; height: 0px;"></div>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-12">
+      <h2>Select Filters</h2>
+      <div style="clear: both; height: 15px;"></div>
+
+      <div class="question_text">
+        Would you like to add search parameters to the Data Item(s) you selected?
+      </div>
+      <div style="clear: both; height: 20px;"></div>
+
+      <div class="item_holder" style="border: 1px solid #cecece; border-radius: 12px;">
+        <div class="question_text">
+          <h4>Coaches</h4>
+        </div>
+
+        <div class="d-flex" >
+          <div class="p-2">
+            <input type="checkbox" />
+          </div>
+          <div class="p-2 ">
+            Include the following Coaches: &nbsp;
+          </div>
+          <div class="p-2 ">
+            <input type="text" class="form-control-engage" style="width: 200px;" placeholder="Coaches" />
+          </div>
+        </div>
+        <div class="d-flex" >
+          <div class="p-2">
+            <input type="checkbox" />
+          </div>
+          <div class="p-2 ">
+            From the following Districts: &nbsp;
+          </div>
+          <div class="p-2 ">
+            <input type="text" class="form-control-engage" style="width: 200px;" placeholder="District(s)" />
+          </div>
+        </div>
+        <div class="d-flex" >
+          <div class="p-2">
+            <input type="checkbox" />
+          </div>
+          <div class="p-2 ">
+            From the following Campuses: &nbsp;
+          </div>
+          <div class="p-2 ">
+            <input type="text" class="form-control-engage" style="width: 200px;" placeholder="Campus" />
+          </div>
+        </div>
+        <div style="clear: both; height: 10px;"></div>
+      </div>
+      <div style="clear: both; height: 20px;"></div>
+
+      <div class="item_holder" style="border: 1px solid #cecece; border-radius: 12px;">
+        <div class="question_text">
+          <h4>Coaching Logs</h4>
+        </div>
+
+        <div class="d-flex" >
+          <div class="p-2">
+            <input type="checkbox" />
+          </div>
+          <div class="p-2 ">
+            <strong>Best Practices</strong> Standard Set
+          </div>
+          <div class="p-2 ">
+
+          </div>
+        </div>
+        <div class="d-flex" >
+          <div class="p-2">
+            <input type="checkbox" />
+          </div>
+          <div class="p-2 ">
+            <strong>Coaching Conversation</strong> Log Type
+          </div>
+          <div class="p-2 ">
+
+          </div>
+        </div>
+        <div class="d-flex"  >
+          <div class="p-2">
+            <input type="checkbox" />
+          </div>
+          <div class="p-2 ">
+            School Year
+          </div>
+          <div class="p-2 ">
+            <select class="form-control-engage" style="width: 200px;">
+              <option value="" >2019 - 2020</option>
+              <option value="" >2018 - 2019</option>
+              <option value="" >2017 - 2018</option>
+              <option value="" >2016 - 2017</option>
+              <option value="" >2015 - 2016</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="d-flex" >
+          <div class="p-2">
+            <input type="checkbox" />
+          </div>
+          <div class="p-2 ">
+            Date Range
+          </div>
+          <div class="p-2 ">
+            From &nbsp; &nbsp;<input class="form-control-engage" style="width: 220px;" type="textbox" placeholder="From Date (mm/dd/YYYY)" />
+          </div>
+          <div class="p-2 ">
+            To &nbsp; &nbsp;<input class="form-control-engage" style="width: 220px;" type="textbox" placeholder="To Date (mm/dd/YYYY)" />
+          </div>
+        </div>
+        <div style="clear: both; height: 20px;"></div>
+      </div>
+      <div style="clear: both; height: 10px;"></div>
+
+
+
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-12">
+      <button class="btn btn-primary" (click)="showTreeTable()">Submit</button>
+    </div>
+  </div>
+
+  <div class="container mt-4" *ngIf="treeTableShowing">
+    <div class="row">
+      <div class="col-12">
+        <tree-table [dataset]="dataset"></tree-table>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+

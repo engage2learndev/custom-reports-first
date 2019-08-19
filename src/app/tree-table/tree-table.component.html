@@ -1,0 +1,34 @@
+<ng-container *ngFor="let key of objectKeys(dataset)">
+  <div
+    [style.width]="getKeyName(key) === 'root' ? '100%' : '93%'" style="float: right" >
+    <h3 *ngIf="getKeyName(key) !== 'root'">{{ getKeyName(key) }}</h3>
+    <table class="table table-bordered" style="width: 100%" >
+      <ng-container *ngFor="let nextKey of objectKeys(dataset[key])">
+        <thead>
+          <tr >
+            <ng-container *ngFor="let label of dataset[key][nextKey]['labels']">
+              <th scope="col">{{ label }}</th>
+            </ng-container>
+          </tr>
+        </thead>
+        <tbody>
+          <tr >
+            <ng-container *ngFor="let val of dataset[key][nextKey]['vals']">
+              <td>{{ val }}</td>
+            </ng-container>
+          </tr>
+        <tr *ngIf="objectKeys(dataset[key][nextKey]['oneToManies']).length > 0">
+          <td [attr.colspan]="getNumColumns(key)">
+            <ng-container *ngFor="let oneToMany of objectKeys(dataset[key][nextKey]['oneToManies'])">
+              <tree-table [dataset]="dataset[key][nextKey]['oneToManies'][oneToMany]"></tree-table>
+            </ng-container>
+          </td>
+        </tr>
+        </tbody>
+      </ng-container>
+    </table>
+  </div>
+</ng-container>
+
+
+

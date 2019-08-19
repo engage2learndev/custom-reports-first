@@ -1,0 +1,32 @@
+ul.item_list_holder {
+  list-style-type: none;
+  margin-bottom: 22px;
+  padding: 17px 17px 0 12px;
+}
+
+ul.item_list_holder li {
+  margin-bottom: 22px;
+  margin-left: 10px;
+}
+
+.question_text {
+
+}
+
+.close_holder {
+  float: right;
+}
+
+.item_holder {
+
+  margin-bottom: 22px;
+  padding: 17px 17px 0 30px;
+}
+
+.item_buttons {
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+
+

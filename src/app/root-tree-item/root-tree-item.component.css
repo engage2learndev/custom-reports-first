@@ -1,0 +1,32 @@
+ul {
+  list-style-type: none;
+  /*margin-bottom: 22px;*/
+  padding: 17px 17px 0 22px;
+}
+
+ul li {
+  margin: 15px 0 0 15px;
+}
+
+.each_item_holder {
+  display: inline-block;
+
+}
+
+.question_text {
+  margin-bottom: 15px;
+}
+
+.close_holder {
+  float: right;
+}
+
+.item_checkbox_holder {
+  margin-bottom: 22px;
+}
+
+.item_buttons {
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  padding: 4px 8px;
+}

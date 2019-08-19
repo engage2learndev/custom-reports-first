@@ -1,0 +1,24 @@
+<div
+  *ngIf="treeList.length > 0 && isShowing"
+  style="border: 1px solid #cecece; border-radius: 12px;"
+  class="item_holder">
+
+  <div class="question_text" *ngIf="isRoot">
+    What Data Item do you wish to report on?
+  </div>
+  <div class="question_text" *ngIf="!isRoot" >
+    Would you like to include any of the Data Items connected to <strong>{{ rootTableLabel }}?</strong>
+    <div class="close_holder"><a href="#" (click)="isShowing = false" >X</a></div>
+  </div>
+
+
+  <ul class="item_list_holder">
+    <ng-container *ngIf="isRoot">
+      <root-tree-item *ngFor="let item of treeList; let i = index" [listItem]="item" [itemIndex]="i" (doSelect)="onSelectRootItem($event)" [isSelected]="i == selectedRootIndex" [isSelected]="false"></root-tree-item>
+    </ng-container>
+    <ng-container *ngIf="!isRoot">
+      <tree-item *ngFor="let item of treeList" [listItem]="item" ></tree-item>
+    </ng-container>
+  </ul>
+
+</div>
